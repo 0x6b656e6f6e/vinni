@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #ffd54f;
+    --secondary-color: #ffb300;
+    --text-color: #4a4a4a;
+    --background-color: rgba(245, 245, 245, 0.9);
+    --accent-color: #ff9800;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    position: relative;
+}
+
+.psychedelic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding-top: 60px;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('photo1719361380.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    animation: fadeIn 1.5s ease-out;
+    padding: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.language-toggle {
+    margin-bottom: 1rem;
+}
+
+.language-toggle button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle button.active {
+    background-color: var(--secondary-color);
+}
+
+.instructions {
+    background-color: rgba(249, 249, 249, 0.8);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.instructions.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+#tokenomics ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tokenomics li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+}
